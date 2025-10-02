@@ -15,9 +15,6 @@ public class DataManager {
 
     public static Map<String, Long> getStock() {
         Map<String, Long> stock = new HashMap<>();
-        //TODO ide jön majd a logic
-
-
         for (Book book : books) {
             //stock.put(key, value)
             stock.put(book.getCategory(), stock.getOrDefault(book.getCategory(), 0L) + 1);

@@ -1,14 +1,19 @@
 package edu.banki.libraryapp.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+
+import java.time.LocalDate;
 
 public class NewBookController {
     @FXML
-    private Label welcomeText;
+    private TextField authorField, titleField, yearField;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    private ComboBox<String> categoryBox;
+
+    @FXML
+    private DatePicker datePicker;
 }
