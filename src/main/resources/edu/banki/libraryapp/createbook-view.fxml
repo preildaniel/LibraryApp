@@ -21,8 +21,8 @@
       <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField fx:id="yearField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" text="Készlet" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" text="Mentés" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button mnemonicParsing="false" onAction="#goToStock" text="Készlet" GridPane.rowIndex="5" />
+      <Button mnemonicParsing="false" onAction="#handleSave" text="Mentés" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <ComboBox fx:id="categoryBox" prefHeight="25.0" prefWidth="461.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    </children>
    <padding>
