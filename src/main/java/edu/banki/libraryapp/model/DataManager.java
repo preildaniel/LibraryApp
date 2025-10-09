@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DataManager {
 
@@ -13,12 +14,21 @@ public class DataManager {
         books.add(book);
     }
 
+    //public static Map<String, Long> getStock() {
+    //    Map<String, Long> stock = new HashMap<>();
+    //    for (Book book : books) {
+    //        //stock.put(key, value)
+    //        stock.put(book.getCategory(), stock.getOrDefault(book.getCategory(), 0L) + 1);
+    //    }
+    //    return stock;
+    //}
+
+    //public static Map<String, Long> getStock() {
+    //    Map<String, Long> stock = new HashMap<>();
+    //    return stock;
+    //}
+
     public static Map<String, Long> getStock() {
-        Map<String, Long> stock = new HashMap<>();
-        for (Book book : books) {
-            //stock.put(key, value)
-            stock.put(book.getCategory(), stock.getOrDefault(book.getCategory(), 0L) + 1);
-        }
-        return stock;
+        return books.stream().collect(Collectors.groupingBy(Book::getCategory, Collectors.counting()));
     }
 }
