@@ -28,7 +28,22 @@ public class DataManager {
     //    return stock;
     //}
 
+    //public static Map<String, Long> getStock() {
+    //    return books.stream().collect(Collectors.groupingBy(Book::getCategory, Collectors.counting()));
+    //}
+
     public static Map<String, Long> getStock() {
-        return books.stream().collect(Collectors.groupingBy(Book::getCategory, Collectors.counting()));
+        Map<String, Long> stock = new HashMap<>();
+        for (Book book : books) {
+            String category = book.getCategory();
+            if (stock.containsKey(category)) {
+                Long currentCount = stock.get(category);
+                stock.put(category, currentCount + 1);
+            } else {
+                stock.put(category, 1L);
+           }
+        }
+       return stock;
     }
+
 }
